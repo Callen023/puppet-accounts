@@ -1,4 +1,9 @@
-define accounts::group {
-    include accounts
-    Accounts::User <| groups == $name |>
+define accounts::group($gid) {
+
+    @accounts::usergroup { $name: }
+
+    group { $name:
+        ensure => present,
+        gid    => $gid,
+    }
 }
