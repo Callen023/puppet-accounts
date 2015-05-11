@@ -7,7 +7,7 @@ class accounts($default_shell='/bin/bash', $default_password='*', $default_manag
     }
 
     # Create all users virtually
-    create_resources('@accounts::user', hiera_hash('users'), $user_defaults)
+    create_resources('accounts::userstub', hiera_hash('users'), $user_defaults)
 
     # Create groups
     create_resources('accounts::group', hiera_hash('groups'))
