@@ -6,6 +6,7 @@ Since I'm using directory authentication (kerberos in my case), it's tailored fo
 
 To include groups in a node:
 
+    class { 'accounts': }
     Accounts::Usergroup <| title == sysadmins |>
 
 Using hiera data (users and groups).
