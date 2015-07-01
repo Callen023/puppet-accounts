@@ -1,9 +1,10 @@
 class accounts($default_shell='/bin/bash', $default_password='*', $default_managehome=true) {
 
     $user_defaults = {
-        shell     => $default_shell,
-        password  => $default_password,
+        shell      => $default_shell,
+        password   => $default_password,
         managehome => $default_managehome,
+        groups     => undef,
     }
 
     # Create all users virtually

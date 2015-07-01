@@ -32,8 +32,12 @@ define accounts::userstub(
         }
     }
 
-    # Virtualized user to be realized
-    @accounts::user { $name:
-        groups => $groups,
+    # If groups empty, no need to virtualize
+    if $groups {
+
+        # Virtualized user to be realized
+        @accounts::user { $name:
+            groups => $groups,
+        }
     }
 }
