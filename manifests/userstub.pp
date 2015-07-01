@@ -1,4 +1,15 @@
-define accounts::userstub($uid, $fullname, $shell, $password, $groups, $managehome, $keytype='rsa', $pubkey=undef) {
+# Stub for the user. Will ensure absent unless overwritten by account::user
+
+define accounts::userstub(
+    $uid,
+    $fullname,
+    $shell,
+    $password,
+    $groups,
+    $managehome,
+    $keytype='rsa',
+    $pubkey=undef
+) {
 
     # Ensure managed user doesn't exist unless realized
     user { $name:
