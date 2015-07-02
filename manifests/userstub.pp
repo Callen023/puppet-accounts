@@ -6,7 +6,8 @@ define accounts::userstub(
     $shell,
     $password,
     $groups,
-    $managehome,
+    $absent_managehome,
+    $present_managehome,
     $keytype='rsa',
     $pubkey=undef
 ) {
@@ -19,7 +20,7 @@ define accounts::userstub(
         shell      => $shell,
         groups     => $groups,
         password   => $password,
-        managehome => $managehome,
+        managehome => $absent_managehome,
     }
 
     # If pubkey, ensure absent till realized
@@ -37,7 +38,8 @@ define accounts::userstub(
 
         # Virtualized user to be realized
         @accounts::user { $name:
-            groups => $groups,
+            groups     => $groups,
+            managehome => $present_managehome,
         }
     }
 }

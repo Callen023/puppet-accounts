@@ -1,10 +1,18 @@
-class accounts($default_shell='/bin/bash', $default_password='*', $default_managehome=true) {
+# Creates all groups by default and userstubs
+
+class accounts(
+    $default_shell='/bin/bash',
+    $default_password='*',
+    $present_managehome=true,
+    $absent_managehome
+) {
 
     $user_defaults = {
-        shell      => $default_shell,
-        password   => $default_password,
-        managehome => $default_managehome,
-        groups     => undef,
+        shell              => $default_shell,
+        password           => $default_password,
+        present_managehome => $present_managehome,
+        absent_managehome  => $absent_managehome,
+        groups             => undef,
     }
 
     # Create all users virtually
