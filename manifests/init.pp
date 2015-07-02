@@ -4,7 +4,7 @@ class accounts(
     $default_shell='/bin/bash',
     $default_password='*',
     $present_managehome=true,
-    $absent_managehome
+    $absent_managehome=false
 ) {
 
     $user_defaults = {
