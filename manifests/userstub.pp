@@ -33,13 +33,9 @@ define accounts::userstub(
         }
     }
 
-    # If groups empty, no need to virtualize
-    if $groups {
-
-        # Virtualized user to be realized
-        @accounts::user { $name:
-            groups     => $groups,
-            managehome => $present_managehome,
-        }
+    # Virtualized user to be realized
+    @accounts::user { $name:
+        groups     => $groups,
+        managehome => $present_managehome,
     }
 }
