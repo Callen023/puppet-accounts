@@ -4,7 +4,7 @@ define accounts::userstub(
     $uid,
     $fullname,
     $shell,
-    $password,
+    $password_hash,
     $groups,
     $absent_managehome,
     $present_managehome,
@@ -19,7 +19,7 @@ define accounts::userstub(
         comment    => $fullname,
         shell      => $shell,
         groups     => $groups,
-        password   => $password,
+        password   => $password_hash,
         managehome => $absent_managehome,
     }
 

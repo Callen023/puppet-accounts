@@ -9,7 +9,7 @@ class accounts(
 
     $user_defaults = {
         shell              => $default_shell,
-        password           => $default_password,
+        password_hash      => $default_password,
         present_managehome => $present_managehome,
         absent_managehome  => $absent_managehome,
         groups             => undef,
