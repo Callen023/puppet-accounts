@@ -4,7 +4,8 @@ class accounts(
     $default_shell='/bin/bash',
     $default_password='*',
     $present_managehome=true,
-    $absent_managehome=false
+    $absent_managehome=false,
+    $membership='minimum',
 ) {
 
     $user_defaults = {
@@ -12,6 +13,7 @@ class accounts(
         password_hash      => $default_password,
         present_managehome => $present_managehome,
         absent_managehome  => $absent_managehome,
+        membership         => $membership,
         groups             => undef,
     }
 

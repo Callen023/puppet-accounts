@@ -6,6 +6,7 @@ define accounts::userstub(
     $shell,
     $password_hash,
     $groups,
+    $membership,
     $absent_managehome,
     $present_managehome,
     $keytype='rsa',
@@ -21,6 +22,7 @@ define accounts::userstub(
         groups     => $groups,
         password   => $password_hash,
         managehome => $absent_managehome,
+        membership => $membership,
     }
 
     # If pubkey, ensure absent till realized
