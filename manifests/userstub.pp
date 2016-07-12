@@ -10,7 +10,8 @@ define accounts::userstub(
     $absent_managehome,
     $present_managehome,
     $keytype='rsa',
-    $pubkey=undef
+    $pubkey=undef,
+    $home=undef,
 ) {
 
     # Ensure managed user doesn't exist unless realized
@@ -23,6 +24,7 @@ define accounts::userstub(
         password   => $password_hash,
         managehome => $absent_managehome,
         membership => $membership,
+        home       => $home,
     }
 
     # If pubkey, ensure absent till realized
